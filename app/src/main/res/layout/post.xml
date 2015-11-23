@@ -1,12 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <include layout="@layout/activity_when_signin_success"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:text="Địa chỉ"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editAddress"
+            android:inputType="text"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="30dp"
+            android:text="Diện tích (m2)"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editSquare"
+            android:inputType="number"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="30dp"
+            android:text="Giá (VNĐ)"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editValue"
+            android:inputType="number"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="310dp"
+            android:layout_marginLeft="30dp"
+            android:text="Thông tin liên hệ"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editInfo"
+            android:inputType="text"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="390dp"
+            android:layout_marginLeft="30dp"
+            android:text="Mô tả thêm"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editExtra"
+            android:inputType="text"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_cf"
+            android:textSize="15dp"
+            android:layout_alignTop="@+id/editTextPassword"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="490dp"
+            android:text="Chấp nhận"
+            android:textColor="#000000"/>
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textSize="15dp"
+            android:layout_alignTop="@+id/editTextPassword"
+            android:layout_toRightOf="@id/button_cf"
+            android:layout_marginTop="490dp"
+            android:text="Hủy"
+            android:textColor="#000000"/>
+    </RelativeLayout>
+
+    <include layout="@layout/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

@@ -1,6 +1,5 @@
 package conloncon.timnhatro;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,23 +9,20 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+
+import conloncon.timnhatro.MainActivity;
 
 
-public class Post extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Filter_search extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    public boolean CHECK_SIGNIN = false;
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.post);
+        setContentView(R.layout.activity_when_signin_success);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -36,17 +32,6 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        connectView();
-    }
-
-    public void connectView(){
-        EditText adress = (EditText) findViewById(R.id.editAddress);
-        EditText area =(EditText) findViewById(R.id.editSquare);
-        EditText price =(EditText) findViewById(R.id.editValue);
-        EditText phone =(EditText) findViewById(R.id.editInfo);
-        EditText decription=(EditText) findViewById(R.id.editExtra);
-        Button button_cf = (Button) findViewById(R.id.button_cf);
-        Button button_cc = (Button) findViewById(R.id.button_cancel);
 
 
     }
@@ -64,7 +49,11 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+
+
+
         return true;
     }
 
@@ -74,9 +63,8 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
         if (id == R.id.action_search) {
-        }
-        else if (id == R.id.filter_search){
 
         }
 
@@ -89,18 +77,31 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
 
         int id = item.getItemId();
 
-        if (id == R.id.post) {
-            Intent intent = new Intent( this, Post.class);
+        if (id == R.id.signup) {
+            Intent intent = new Intent( this, Signup.class);
             startActivity(intent);
         }
         else if (id == R.id.signin) {
-
+            Intent intent = new Intent( this, Signin.class);
+            startActivity(intent);
         }
         else if (id == R.id.feedback) {
 
         }
         else if (id == R.id.help){
 
+        }
+        else if (id == R.id.post){
+            Intent intent = new Intent(this, Post.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.post_list) {
+            Intent intent = new Intent(this, Manage_Post.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.signout) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -26,8 +26,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public boolean CHECK_SIGNIN=false;
-
+    public boolean CHECK_SIGNIN=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 
@@ -84,6 +82,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.action_search) {
 
+        }
+        else if (id == R.id.filter_search) {
+            Intent intent = new Intent(this, Filter_search.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

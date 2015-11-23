@@ -12,14 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/editTextUserName"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:layout_marginTop="130dp"
             android:layout_marginLeft="30dp"
-            android:hint="Tên đăng nhập">
+            android:hint="Tên đăng nhập"
+            android:textColor="#000000">
 
         </EditText>
 
@@ -30,7 +32,8 @@
             android:inputType="textPassword"
             android:layout_marginTop="190dp"
             android:layout_marginLeft="30dp"
-            android:hint="Mật khẩu" >
+            android:hint="Mật khẩu"
+            android:textColor="#000000">
 
         </EditText>
 
