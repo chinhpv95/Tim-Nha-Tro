@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,8 +19,8 @@ import android.widget.TextView;
 
 public class Post extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    public boolean CHECK_SIGNIN = false;
-
+    EditText address, square, price, info, extra_info;
+    Button post, cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +41,28 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     public void connectView(){
-        EditText adress = (EditText) findViewById(R.id.editAddress);
-        EditText area =(EditText) findViewById(R.id.editSquare);
-        EditText price =(EditText) findViewById(R.id.editValue);
-        EditText phone =(EditText) findViewById(R.id.editInfo);
-        EditText decription=(EditText) findViewById(R.id.editExtra);
-        Button button_cf = (Button) findViewById(R.id.button_cf);
-        Button button_cc = (Button) findViewById(R.id.button_cancel);
+        post = (Button) findViewById(R.id.post_button);
+        cancel = (Button) findViewById(R.id.cancel_button);
+        address = (EditText) findViewById(R.id.editTextAddress);
+        square = (EditText) findViewById(R.id.editTextSquare);
+        price = (EditText) findViewById(R.id.editTextPrice);
+        info = (EditText) findViewById(R.id.editTextInfo);
+        extra_info = (EditText) findViewById(R.id.editTextExtraInfo);
 
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
+                finish();
+            }
+        });
     }
 
     @Override

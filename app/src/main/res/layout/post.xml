@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -11,116 +11,126 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include layout="@layout/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewAddress"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:text="@string/address"
+            android:textSize="17sp"
             android:layout_marginLeft="30dp"
-            android:text="Địa chỉ"
-            android:textSize="18sp"/>
+            android:layout_marginTop="100dp"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editAddress"
+            android:id="@+id/editTextAddress"
+            android:layout_below="@+id/textViewAddress"
             android:inputType="text"
-            android:layout_marginTop="70dp"
             android:layout_marginLeft="30dp"
             android:textColor="#000000"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewSquare"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
-            android:layout_marginLeft="30dp"
-            android:text="Diện tích (m2)"
-            android:textSize="18sp"/>
+            android:layout_below="@id/editTextAddress"
+            android:text="@string/square"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editSquare"
+            android:id="@+id/editTextSquare"
             android:inputType="number"
-            android:layout_marginTop="160dp"
+            android:layout_below="@+id/textViewSquare"
             android:layout_marginLeft="30dp"
             android:textColor="#000000"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewPrice"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
-            android:layout_marginLeft="30dp"
-            android:text="Giá (VNĐ)"
-            android:textSize="18sp"/>
+            android:layout_below="@id/editTextSquare"
+            android:text="@string/price"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editValue"
+            android:id="@+id/editTextPrice"
             android:inputType="number"
-            android:layout_marginTop="250dp"
+            android:layout_below="@+id/textViewPrice"
             android:layout_marginLeft="30dp"
             android:textColor="#000000"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewInfo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="310dp"
-            android:layout_marginLeft="30dp"
-            android:text="Thông tin liên hệ"
-            android:textSize="18sp"/>
+            android:layout_below="@id/editTextPrice"
+            android:text="@string/info"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editInfo"
+            android:id="@+id/editTextInfo"
             android:inputType="text"
-            android:layout_marginTop="340dp"
+            android:layout_below="@+id/textViewInfo"
             android:layout_marginLeft="30dp"
             android:textColor="#000000"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textViewExtraInfo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="390dp"
-            android:layout_marginLeft="30dp"
-            android:text="Mô tả thêm"
-            android:textSize="18sp"/>
+            android:layout_below="@id/editTextInfo"
+            android:text="@string/extra_info"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editExtra"
+            android:id="@+id/editTextExtraInfo"
             android:inputType="text"
-            android:layout_marginTop="420dp"
+            android:layout_below="@+id/textViewExtraInfo"
             android:layout_marginLeft="30dp"
             android:textColor="#000000"/>
 
         <Button
+            android:id="@+id/post_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:id="@+id/button_cf"
-            android:textSize="15dp"
-            android:layout_alignTop="@+id/editTextPassword"
+            android:text="@string/post_button"
+            android:layout_below="@+id/editTextExtraInfo"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="490dp"
-            android:text="Chấp nhận"
-            android:textColor="#000000"/>
+            android:textColor="#ffffff"
+            android:background="#3d79b5"/>
 
         <Button
-            android:id="@+id/button_cancel"
+            android:id="@+id/cancel_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:textSize="15dp"
-            android:layout_alignTop="@+id/editTextPassword"
-            android:layout_toRightOf="@id/button_cf"
-            android:layout_marginTop="490dp"
-            android:text="Hủy"
-            android:textColor="#000000"/>
+            android:layout_below="@+id/editTextExtraInfo"
+            android:layout_toRightOf="@id/post_button"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/cancel_button"
+            android:textColor="#ffffff"
+            android:background="#3d79b5"/>
     </RelativeLayout>
 
-    <include layout="@layout/activity_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-</RelativeLayout>
+</LinearLayout>

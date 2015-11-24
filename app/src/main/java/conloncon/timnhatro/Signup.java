@@ -13,11 +13,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by Tajse on 11/17/2015.
  */
 public class Signup extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    EditText textUser, textPass, textPassAgain, textEmail, textPhone;
+    Button confirm, cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,27 @@ public class Signup extends AppCompatActivity implements NavigationView.OnNaviga
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        confirm = (Button) findViewById(R.id.button_confirm);
+        cancel = (Button) findViewById(R.id.cancel_button);
+
+        //control button
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
+                finish();
+            }
+        });
     }
 
     @Override

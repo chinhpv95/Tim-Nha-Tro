@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.action_search) {
-
         }
         else if (id == R.id.filter_search) {
             Intent intent = new Intent(this, Filter_search.class);
@@ -109,7 +108,8 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.help){
-
+            Intent intent = new Intent(this, Help.class);
+            startActivity(intent);
         }
         else if (id == R.id.post){
             Intent intent = new Intent(this, Post.class);

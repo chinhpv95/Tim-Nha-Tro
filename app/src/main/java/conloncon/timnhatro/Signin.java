@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 public class Signin extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    EditText username, pass;
+    Button login, cancel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +41,11 @@ public class Signin extends AppCompatActivity implements NavigationView.OnNaviga
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        final EditText username, pass;
-        Button login;
+
         username = (EditText) findViewById(R.id.editTextUserName);
         pass = (EditText) findViewById(R.id.editTextPassword);
         login = (Button) findViewById(R.id.button_login);
+        cancel = (Button) findViewById(R.id.cancel_button);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +53,22 @@ public class Signin extends AppCompatActivity implements NavigationView.OnNaviga
                 String user = "chinh";
                 String password = "chinh";
                 if(username.getText().toString().equals(user) && pass.getText().toString().equals(password)) {
-
+                    Toast.makeText(Signin.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();
                 }
                 else {
-
+                    Toast.makeText(Signin.this, "Đăng nhập không thành công, vui lòng thử lại!", Toast.LENGTH_LONG).show();
+                    username.setText("");
+                    pass.setText("");
                 }
+            }
+        });
+
+        //cancel button
+        cancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
+                finish();
             }
         });
     }
