@@ -61,7 +61,7 @@
             android:id="@+id/button_login"
             android:textSize="15dp"
             android:layout_alignTop="@+id/editTextPassword"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="100dp"
             android:text="@string/signin_button"
             android:textColor="#ffffff"
@@ -80,11 +80,5 @@
             android:textColor="#ffffff"
             android:background="#3d79b5"/>
 
-
-
     </RelativeLayout>
-
-
-
-
 </LinearLayout>

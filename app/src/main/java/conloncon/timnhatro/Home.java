@@ -1,17 +1,7 @@
 package conloncon.timnhatro;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.internal.widget.ButtonBarLayout;
-import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.MenuInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,26 +9,18 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
 
-    protected static boolean CHECK_SIGNIN;
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (CHECK_SIGNIN) {
-            setContentView(R.layout.activity_when_signin_success);
-        }
-        else {
-            setContentView(R.layout.activity_main);
-        }
+        setContentView(R.layout.activity_when_signin_success);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -97,22 +79,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
+        if (id == R.id.feedback) {
 
-        if (id == R.id.signup) {
-            Intent intent = new Intent( this, Signup.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.signin) {
-            Intent intent = new Intent( this, Signin.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.feedback) {
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=")));
-            }
-            catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=")));
-            }
         }
         else if (id == R.id.help){
             Intent intent = new Intent(this, Help.class);
@@ -127,7 +95,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.signout) {
-            CHECK_SIGNIN = false;
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
@@ -136,5 +103,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

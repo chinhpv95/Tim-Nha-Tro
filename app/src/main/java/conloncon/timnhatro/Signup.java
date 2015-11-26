@@ -2,9 +2,7 @@ package conloncon.timnhatro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,10 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by Tajse on 11/17/2015.
- */
-public class Signup extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+public class Signup extends MainActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     EditText textUser, textPass, textPassAgain, textEmail, textPhone;
     Button confirm, cancel;
@@ -46,6 +42,11 @@ public class Signup extends AppCompatActivity implements NavigationView.OnNaviga
 
         confirm = (Button) findViewById(R.id.button_confirm);
         cancel = (Button) findViewById(R.id.cancel_button);
+        textUser = (EditText) findViewById(R.id.editTextUserName);
+        textPass = (EditText) findViewById(R.id.editTextPassword);
+        textPassAgain = (EditText) findViewById(R.id.editTextPasswordAgain);
+        textEmail = (EditText) findViewById(R.id.editTextEmail);
+        textPhone = (EditText) findViewById(R.id.editTextPhone);
 
         //control button
         confirm.setOnClickListener(new View.OnClickListener() {

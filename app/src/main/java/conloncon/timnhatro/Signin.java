@@ -19,8 +19,12 @@ import android.widget.EditText;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import conloncon.timnhatro.MainActivity;
 
-public class Signin extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+public class Signin extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    //public boolean CHECK_SIGNIN = false;
 
     EditText username, pass;
     Button login, cancel;
@@ -53,10 +57,15 @@ public class Signin extends AppCompatActivity implements NavigationView.OnNaviga
                 String user = "chinh";
                 String password = "chinh";
                 if(username.getText().toString().equals(user) && pass.getText().toString().equals(password)) {
-                    Toast.makeText(Signin.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signin.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = getIntent();
+                    CHECK_SIGNIN = true;
+                    intent.putExtra("isLogin", CHECK_SIGNIN);
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
                 else {
-                    Toast.makeText(Signin.this, "Đăng nhập không thành công, vui lòng thử lại!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signin.this, "Đăng nhập không thành công, vui lòng thử lại!", Toast.LENGTH_SHORT).show();
                     username.setText("");
                     pass.setText("");
                 }
