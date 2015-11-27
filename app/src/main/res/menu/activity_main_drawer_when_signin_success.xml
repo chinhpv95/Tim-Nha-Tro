@@ -5,7 +5,8 @@
         android:icon="@mipmap/ic_launcher_post"
         android:title="Đăng bài" />
     <item android:id="@+id/post_list"
-        android:title="Quản lý bài đăng" />
+        android:title="Quản lý bài đăng"
+        android:icon="@mipmap/ic_launcher_manage_post"/>
     <item android:id="@+id/feedback"
         android:icon="@mipmap/ic_launcher_feedback"
         android:title="Góp ý" />

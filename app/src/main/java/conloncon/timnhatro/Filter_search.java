@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import conloncon.timnhatro.MainActivity;
@@ -28,23 +29,53 @@ public class Filter_search extends AppCompatActivity implements NavigationView.O
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter =
+        Button search = (Button) findViewById(R.id.search_button);
+        Button cancel = (Button) findViewById(R.id.cancel_button);
+
+        Spinner spinner1 = (Spinner) findViewById(R.id.spinner_district);
+        ArrayAdapter<CharSequence> adapter1 =
                 ArrayAdapter.createFromResource(this, R.array.district, R.layout.dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinner1.setAdapter(adapter1);
+        /*spinner1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+            }
+        });*/
+
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner_price);
+        ArrayAdapter<CharSequence> adapter2 =
+                ArrayAdapter.createFromResource(this, R.array.price, R.layout.dropdown_item);
+        spinner2.setAdapter(adapter2);
+        /*spinner2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });*/
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED);
+                finish();
             }
         });
 

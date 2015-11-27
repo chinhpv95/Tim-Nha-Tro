@@ -22,7 +22,8 @@
         <activity
             android:name=".Signup"
             android:label="Đăng ký"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -63,6 +64,12 @@
             android:label="Trợ giúp"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
+        </activity>
+
+        <activity
+            android:name=".Search_Result"
+            android:label="Kết quả tìm kiếm"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>

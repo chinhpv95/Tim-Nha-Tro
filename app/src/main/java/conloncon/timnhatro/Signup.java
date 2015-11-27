@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Signup extends MainActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -29,14 +30,14 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
 
 
@@ -48,11 +49,23 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
         textEmail = (EditText) findViewById(R.id.editTextEmail);
         textPhone = (EditText) findViewById(R.id.editTextPhone);
 
-        //control button
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        //control button
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textPass.toString().equals(textPassAgain.toString())) {
+                    Toast.makeText(Signup.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                    Toast.makeText(Signup.this, "Đăng ký không thành công", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -64,6 +77,7 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
             }
         });
     }
+
 
     @Override
     public void onBackPressed() {

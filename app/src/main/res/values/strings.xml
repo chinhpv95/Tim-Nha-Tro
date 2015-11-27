@@ -26,6 +26,7 @@
     <string name="confirm_button">Xác nhận</string>
     <string name="signin_button">Đăng nhập</string>
     <string name="signup_button">Đăng ký</string>
+    <string name="search_button">Tìm kiếm</string>
     <string name="post_button">Đăng</string>
     <string name="cancel_button">Hủy</string>
 </resources>

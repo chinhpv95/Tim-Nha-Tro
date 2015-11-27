@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Post extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,14 +30,15 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
+
         connectView();
     }
 
@@ -52,7 +54,16 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(address.getText().toString().equals("")
+                        && square.getText().toString().equals(0)
+                        && price.getText().toString().equals(0)
+                        && info.getText().toString().equals("")
+                        && extra_info.getText().toString().equals("")) {
+                    Toast.makeText(Post.this, "Đăng bài thành công", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else
+                    Toast.makeText(Post.this, "Đăng bài không thành công, vui lòng thử lại!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -63,7 +74,11 @@ public class Post extends AppCompatActivity implements NavigationView.OnNavigati
                 finish();
             }
         });
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {
