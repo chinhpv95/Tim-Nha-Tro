@@ -22,9 +22,9 @@ import android.widget.Toast;
 import conloncon.timnhatro.MainActivity;
 
 
-public class Signin extends MainActivity {
+public class Signin extends AppCompatActivity {
 
-    //public boolean CHECK_SIGNIN = false;
+    public boolean CHECK_SIGNIN = false;
 
     EditText username, pass;
     Button login, cancel;
@@ -33,17 +33,6 @@ public class Signin extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
 
         username = (EditText) findViewById(R.id.editTextUserName);
@@ -80,17 +69,11 @@ public class Signin extends MainActivity {
                 finish();
             }
         });
+
+        android.support.v7.app.ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -114,29 +97,4 @@ public class Signin extends MainActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.signup) {
-            Intent intent = new Intent( this, Signup.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.signin) {
-            Intent intent = new Intent( this, Signin.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.feedback) {
-
-        }
-        else if (id == R.id.help){
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

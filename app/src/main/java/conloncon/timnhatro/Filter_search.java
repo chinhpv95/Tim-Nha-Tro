@@ -20,23 +20,12 @@ import android.widget.Spinner;
 import conloncon.timnhatro.MainActivity;
 
 
-public class Filter_search extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Filter_search extends AppCompatActivity  {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter_search);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
         Button search = (Button) findViewById(R.id.search_button);
         Button cancel = (Button) findViewById(R.id.cancel_button);
@@ -79,6 +68,9 @@ public class Filter_search extends AppCompatActivity implements NavigationView.O
             }
         });
 
+        android.support.v7.app.ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -112,45 +104,12 @@ public class Filter_search extends AppCompatActivity implements NavigationView.O
         if (id == R.id.action_search) {
 
         }
+        else if (id == R.id.filter_search) {
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-
-        if (id == R.id.signup) {
-            Intent intent = new Intent( this, Signup.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.signin) {
-            Intent intent = new Intent( this, Signin.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.feedback) {
-
-        }
-        else if (id == R.id.help){
-
-        }
-        else if (id == R.id.post){
-            Intent intent = new Intent(this, Post.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.post_list) {
-            Intent intent = new Intent(this, Manage_Post.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.signout) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

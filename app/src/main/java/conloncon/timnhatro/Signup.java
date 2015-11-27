@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Signup extends MainActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Signup extends AppCompatActivity{
 
     EditText textUser, textPass, textPassAgain, textEmail, textPhone;
     Button confirm, cancel;
@@ -26,18 +26,6 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
 
 
@@ -76,18 +64,12 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
                 finish();
             }
         });
+
+        android.support.v7.app.ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -105,33 +87,12 @@ public class Signup extends MainActivity implements NavigationView.OnNavigationI
         if (id == R.id.action_search) {
         }
 
+        else if (id == R.id.filter_search){
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.signup) {
-            Intent intent = new Intent( this, Signup.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.signin) {
-            Intent intent = new Intent( this, Signin.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.feedback) {
-
-        }
-        else if (id == R.id.help){
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
 }

@@ -20,23 +20,12 @@ public class Manage_Post extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage_post);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        android.support.v7.app.ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

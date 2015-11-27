@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -7,13 +7,9 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/activity_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
         <TextView
             android:id="@+id/textViewAddress"
@@ -22,7 +18,7 @@
             android:text="@string/address"
             android:textSize="17sp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="50dp"/>
 
         <EditText
             android:layout_width="300dp"
@@ -40,7 +36,7 @@
             android:layout_below="@id/editTextAddress"
             android:text="@string/square"
             android:textSize="17sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
 
         <EditText
@@ -59,7 +55,7 @@
             android:layout_below="@id/editTextSquare"
             android:text="@string/price"
             android:textSize="17sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
 
         <EditText
@@ -78,7 +74,7 @@
             android:layout_below="@id/editTextPrice"
             android:text="@string/info"
             android:textSize="17sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
 
         <EditText
@@ -97,7 +93,7 @@
             android:layout_below="@id/editTextInfo"
             android:text="@string/extra_info"
             android:textSize="17sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
 
         <EditText
@@ -115,7 +111,7 @@
             android:layout_height="50dp"
             android:text="@string/post_button"
             android:layout_below="@+id/editTextExtraInfo"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:textColor="#ffffff"
             android:background="#3d79b5"/>
@@ -126,11 +122,11 @@
             android:layout_height="50dp"
             android:layout_below="@+id/editTextExtraInfo"
             android:layout_toRightOf="@id/post_button"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:text="@string/cancel_button"
             android:textColor="#ffffff"
             android:background="#3d79b5"/>
     </RelativeLayout>
 
-</LinearLayout>
+</ScrollView>
